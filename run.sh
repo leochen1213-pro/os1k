@@ -24,7 +24,10 @@ CFLAGS="-std=c11 -O2 -g3 -Wall -Wextra --target=riscv32-unknown-elf -fuse-ld=lld
 
 # Add
 # 編譯
-$CC $CFLAGS -Wl,-Tkernel.ld -Wl,-Map=kernel.map -o kernel.elf kernel.c
+#$CC $CFLAGS -Wl,-Tkernel.ld -Wl,-Map=kernel.map -o kernel.elf kernel.c
+
+# Ch5 Add
+$CC $CFLAGS -Wl,-Tkernel.ld -Wl,-Map=kernel.map -o kernel.elf kernel.c common.c
 
 # TODO(ch04): 依書上內容補上 CFLAGS、編譯 kernel.elf、啟動 QEMU 的指令
 # 自己打一遍，並在 notes/week1.md 記下每個 flag 的用途
